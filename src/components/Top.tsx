@@ -1,5 +1,11 @@
 import React, { FC } from 'react';
 
-const Top: FC = () => <div className="top">Top画面です</div>;
+import Header from './Header';
+
+const Top: FC = () => (
+  <>
+    <Header />
+  </>
+);
 
 export default Top;
