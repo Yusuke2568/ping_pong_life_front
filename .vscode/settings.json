@@ -29,5 +29,6 @@
   "typescript.tsserver.trace": "verbose",
   "[markdown]": {
     "files.trimTrailingWhitespace": false
-  }
+  },
+  "editor.tabSize": 2
 }
