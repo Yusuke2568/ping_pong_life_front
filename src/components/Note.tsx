@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 
 import TextField from '@material-ui/core/TextField';
+import TextPreview from './TextPreview';
 
 const Note: FC = () => {
   const [input, setInput] = useState('');
@@ -25,6 +26,7 @@ const Note: FC = () => {
         value={input}
         onChange={changeInput}
       />
+      <TextPreview />
     </>
   );
 };
