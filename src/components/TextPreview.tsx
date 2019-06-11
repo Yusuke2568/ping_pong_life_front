@@ -11,19 +11,18 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const TextPreview: FC = () => {
+export interface TextPreviewProps {
+  previewText?: string;
+}
+
+const TextPreview: FC<TextPreviewProps> = ({ previewText = '' }) => {
   const classes = useStyles();
 
   return (
     <div>
       <Paper className={classes.root}>
-        <Typography variant="h5" component="h3">
-          This is a sheet of paper.
-        </Typography>
-        <Typography component="p">
-          Paper can be used to build surface or other elements for your
-          application.
-        </Typography>
+        <Typography variant="h5" component="h3"></Typography>
+        <Typography component="p">{previewText}</Typography>
       </Paper>
     </div>
   );

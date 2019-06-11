@@ -7,7 +7,7 @@ export interface NoteProps {
   change?: (text: string) => void;
 }
 
-const Note: FC<NoteProps> = ({ input = 'hoge', change = () => {} }) => {
+const Note: FC<NoteProps> = ({ input = '', change = () => {} }) => {
   const changeText = (event: React.ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value || '';
     change(text);
