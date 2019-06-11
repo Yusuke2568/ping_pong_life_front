@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import { Marked } from 'marked-ts';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,7 +23,12 @@ const TextPreview: FC<TextPreviewProps> = ({ previewText = '' }) => {
     <div>
       <Paper className={classes.root}>
         <Typography variant="h5" component="h3"></Typography>
-        <Typography component="p">{previewText}</Typography>
+        <Typography component="p"></Typography>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: Marked.parse(previewText),
+          }}
+        ></div>
       </Paper>
     </div>
   );
