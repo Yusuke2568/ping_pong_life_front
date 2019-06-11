@@ -1,13 +1,16 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 
 import TextField from '@material-ui/core/TextField';
-import TextPreview from './TextPreview';
 
-const Note: FC = () => {
-  const [input, setInput] = useState('');
+export interface NoteProps {
+  input?: string;
+  change?: (text: string) => void;
+}
 
-  const changeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(event.target.value);
+const Note: FC<NoteProps> = ({ input = 'hoge', change = () => {} }) => {
+  const changeText = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const text = event.target.value || '';
+    change(text);
   };
 
   return (
@@ -24,9 +27,8 @@ const Note: FC = () => {
           shrink: true,
         }}
         value={input}
-        onChange={changeInput}
+        onChange={changeText}
       />
-      <TextPreview />
     </>
   );
 };
