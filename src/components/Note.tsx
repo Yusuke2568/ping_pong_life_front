@@ -16,17 +16,19 @@ const Note: FC<NoteProps> = ({ input = '', change = () => {} }) => {
   return (
     <>
       <TextField
-        id="outlined-full-width"
-        label="content"
+        id="outlined-multiline-flexible"
+        label="Multiline"
+        multiline
         style={{ margin: 8 }}
         placeholder="Placeholder"
         fullWidth
+        rows={3}
         margin="normal"
         variant="outlined"
         InputLabelProps={{
           shrink: true,
         }}
-        value={input}
+        defaultValue={input}
         onChange={changeText}
       />
     </>
