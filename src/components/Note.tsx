@@ -23,7 +23,6 @@ const Note: FC<NoteProps> = ({ input = '', change = () => {} }) => {
         placeholder="Placeholder"
         fullWidth
         rows={3}
-        margin="normal"
         variant="outlined"
         InputLabelProps={{
           shrink: true,

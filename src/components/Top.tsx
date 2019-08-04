@@ -10,14 +10,23 @@ const Top: FC = () => (
   <>
     <Header />
     <Container>
-      <Note />
-      <TextPreview />
+      <FlexView>
+        <Note />
+      </FlexView>
+      <FlexView>
+        <TextPreview />
+      </FlexView>
     </Container>
   </>
 );
 
 const Container = styled.div`
   display: flex;
+`;
+
+const FlexView = styled.div`
+  flex: 1;
+  padding: 30px;
 `;
 
 export default Top;
